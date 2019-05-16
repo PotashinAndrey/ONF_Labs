@@ -1,0 +1,6 @@
+﻿  C_Circle.cpp
+  C_Circle_Color.cpp
+C:\Users\xaozl\source\repos\Lab2_2\Lab_2.2\C_Circle_Color.cpp(30): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  main.cpp
+  Создание кода...
+  Lab_2.2.vcxproj -> C:\Users\xaozl\source\repos\Lab2_2\Debug\Lab_2.2.exe
