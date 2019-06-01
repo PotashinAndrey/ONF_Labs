@@ -11,12 +11,11 @@ public:
 	polynomial(const polynomial&);
 	~polynomial();
 
-	void set_degree(int);
 	void set_coefficients(double*);
 	int get_degree();
 	void get_coefficients();
-	int random(int, int);
-	double* create_coef(int);
+
+	void random_coef(int);
 
 	polynomial& operator=(const polynomial&);
 	polynomial& operator+(double);
@@ -25,8 +24,9 @@ public:
 	friend ostream& operator<<(ostream&, polynomial&);
 	friend istream& operator>>(istream&, polynomial&);
 
-private: 
+private:
 	int degree;
 	double* x;
+	void set_degree(int);
 };
 
