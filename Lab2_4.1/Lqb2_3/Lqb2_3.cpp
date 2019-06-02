@@ -6,25 +6,14 @@
 using namespace std;
 
 double function(double x, double b) {
-
-	try {
-		if (sinh(x - b) == 0) {
-			cout << "Division by zero!" << endl;
-			throw 1;
-		}
-
-		if (cosh(x + b) / sinh(x - b) < 0) {
-			cout << "Negative value under the root!" << endl;
-			throw 2;
-		}
-
-		return sqrt(cosh(x + b) / sinh(x - b));
+	if (sinh(x - b) == 0) {
+		throw 1;
 	}
-	catch (int error) {
-		cout << "Error catched! Type code : ";
 
-		return error; 
+	if (cosh(x + b) / sinh(x - b) < 0) {
+		throw 2;
 	}
+	return sqrt(cosh(x + b) / sinh(x - b));
 }
 
 int main()
@@ -32,7 +21,20 @@ int main()
 	double a, b;
 
 	cin >> a >> b;
-	cout << function(a, b);
-
+	try {
+		cout << function(a, b);
+	}
+	catch (int er) {
+		switch (er)
+		{
+		case 1:
+			cout << "Division by zero!" << endl;
+			break;
+		case 2:
+			cout << "Negative value under the root!" << endl;
+			break;
+		}
+		cout << "Error catched! Type code : " << er;
+	}
 	return 0;
 }
